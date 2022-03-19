@@ -31,4 +31,9 @@ public class LaptopServlet extends HttpServlet {
         out.print(laptopJsonString);
         out.flush();
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
 }
