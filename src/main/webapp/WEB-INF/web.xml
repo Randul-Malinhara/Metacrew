@@ -8,7 +8,7 @@
 <!--
   <servlet>
     <servlet-name>HomeServlet</servlet-name>
-    <servlet-class>org.econation.HomeServlet</servlet-class>
+    <servlet-class>org.econation.endpoints.HomeServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>

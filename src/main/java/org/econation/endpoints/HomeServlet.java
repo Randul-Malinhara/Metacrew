@@ -1,4 +1,4 @@
-package org.econation;
+package org.econation.endpoints;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +13,7 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("Admin Login/html");
         PrintWriter out = resp.getWriter();
-
+        out.println("");
     }
 }
 
