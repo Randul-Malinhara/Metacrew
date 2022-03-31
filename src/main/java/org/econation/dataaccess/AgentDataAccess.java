@@ -1,6 +1,7 @@
 package org.econation.dataaccess;
 
 import org.econation.model.Laptop;
+import org.econation.model.mobilePhone;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -54,4 +55,36 @@ public class AgentDataAccess {
         return laptops;
     }
 
+    public List<mobilePhone> getMobilePhones() {
+        Connection con = null;
+        List<mobilePhone> mobilePhones = new ArrayList<>();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eco_nation", "econation", "econation");
+            Statement stmt = con.createStatement();
+
+            ResultSet rs = stmt.executeQuery("select * from mobile_phones");
+
+            while (rs.next()) {
+                mobilePhone mobilePhone = new mobilePhone(rs.getString(1), rs.getInt(2));
+                mobilePhones.add(mobilePhone);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            if(con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+        return mobilePhones;
+    }
 }
