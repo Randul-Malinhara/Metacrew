@@ -38,7 +38,6 @@ public class AgentDataAccess {
             }
         }
 
-
         return laptops;
     }
 
